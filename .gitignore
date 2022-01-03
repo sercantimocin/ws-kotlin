@@ -3,3 +3,4 @@ console/.idea
 console/gradle
 .idea
 .DS_Store
+console/build

@@ -5,15 +5,12 @@ fun main() {
     //All nullable references to a are actually the same object because of the memory optimization
     // that JVM applies to Integers between -128 and 127.
     // It doesn't apply to the b references, so they are different objects.
-    referenceCheck()
-
-    println()
+    //referenceCheck()
 
     //primitiveTypes()
 
-    println()
-
-
+    //typeCheck(11)
+    //typeCheck("Test")
 }
 
 fun referenceCheck() {
@@ -49,6 +46,19 @@ fun primitiveTypes(){
     println(z::class)
 }
 
-fun typeCheck(){
+fun typeCheck(x: Any){
 
+    if (x !is Boolean){
+        println("x is not boolean")
+    }
+
+    if (x is String) {
+        println(x.length) // x is automatically cast to String
+    }
+
+    val castedX2 = x as? Double
+    println(castedX2)
+
+    val castedX = x as Double
+    println(castedX)
 }

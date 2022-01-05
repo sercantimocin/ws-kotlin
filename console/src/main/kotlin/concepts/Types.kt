@@ -11,6 +11,7 @@ fun main() {
 
     //typeCheck(11)
     //typeCheck("Test")
+    //typeCheck(listOf(1,2,3))
 }
 
 fun referenceCheck() {
@@ -54,6 +55,10 @@ fun typeCheck(x: Any){
 
     if (x is String) {
         println(x.length) // x is automatically cast to String
+    }
+
+    if ( x is List<*>){
+        x.forEach { println(it) }
     }
 
     val castedX2 = x as? Double
